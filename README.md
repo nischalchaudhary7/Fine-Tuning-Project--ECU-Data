@@ -2,7 +2,7 @@
 
 
 
-\# 🎓 ECU AI Chatbot \& Web Scraper Project
+ ECU AI Chatbot \& Web Scraper Project
 
 
 
@@ -14,25 +14,25 @@ Welcome to the ECU Chatbot project! This is a fully functional AI chatbot built 
 
 
 
-\## 🚀 What This Project Does
+\## What This Project Does
 
 
 
-\- 🔎 \*\*Scrapes\*\* over 30,000+ ECU web pages using Python and BeautifulSoup
+\- \*\*Scrapes\*\* over 30,000+ ECU web pages using Python and BeautifulSoup
 
-\- 📁 \*\*Categorizes\*\* content into structured sections like Academics, Admissions, Scholarships, etc.
+\- \*\*Categorizes\*\* content into structured sections like Academics, Admissions, Scholarships, etc.
 
-\- 🧠 \*\*Generates NLP-style Q\&A pairs\*\* from raw content using smart templates
+\- \*\*Generates NLP-style Q\&A pairs\*\* from raw content using smart templates
 
-\- 🤖 \*\*Runs a chatbot\*\* that:
+\- \*\*Runs a chatbot\*\* that:
 
 &nbsp; - Answers questions from a fine-tuned local dataset
 
 &nbsp; - Falls back to \*\*DeepSeek API\*\* if no local match is found
 
-\- 📊 \*\*Visualizes data\*\* with charts showing how information is distributed
+\- \*\*Visualizes data\*\* with charts showing how information is distributed
 
-\- 🔁 \*\*Automates updates\*\* daily using the `schedule` module
+\- \*\*Automates updates\*\* daily using the `schedule` module
 
 
 
@@ -40,11 +40,11 @@ Welcome to the ECU Chatbot project! This is a fully functional AI chatbot built 
 
 
 
-\## 🧱 Project Structure
+\## Project Structure
 
 
 
-📦 Finetuning/
+ Finetuning/
 
 ├── datarefining.py # Scrapes homepage links
 
@@ -148,23 +148,23 @@ Outputs:
 
 
 
-📊 category\_counts.png: Bar + Pie charts
+category\_counts.png: Bar + Pie charts
 
 
 
-📋 category\_counts.csv: Raw numbers per category
+category\_counts.csv: Raw numbers per category
 
 
 
-📦 Large Dataset
+Large Dataset
 
 The cleaned fine-tuning dataset was too large for GitHub’s 100MB limit.
 
 
 
-👉 You can download it here:
+ You can download it here:
 
-📥 Download Cleaned Dataset (360MB)
+Download Cleaned Dataset (360MB)
 
 
 
@@ -172,7 +172,7 @@ The cleaned fine-tuning dataset was too large for GitHub’s 100MB limit.
 
 
 
-🔐 API Key Setup
+API Key Setup
 
 To use the DeepSeek fallback:
 
@@ -192,7 +192,7 @@ Sign up for a free key at openrouter.ai
 
 
 
-📌 Tech Stack
+Tech Stack
 
 Python
 
@@ -230,7 +230,7 @@ Schedule (for automation)
 
 
 
-📅 Automation Schedule
+Automation Schedule
 
 Set up automated scraping:
 
@@ -246,7 +246,7 @@ Runs mainrefine.py daily at 8:00 AM
 
 
 
-✨ Future Plans
+Future Plans
 
 Host chatbot as a web app (Flask or React.js)
 
@@ -264,7 +264,7 @@ Integrate LangChain for advanced memory
 
 
 
-📄 License
+License
 
 This project is open source under the MIT License.
 
