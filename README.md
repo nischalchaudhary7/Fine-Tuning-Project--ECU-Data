@@ -1,276 +1,192 @@
-# Fine-Tuning-Project--ECU-Data
+Fine-Tuning-Project — ECU Data
+AI Chatbot & Intelligent Web Scraping System for East Central University
 
+1. Overview
 
+Fine-Tuning-Project — ECU Data is an end-to-end AI-powered university chatbot system designed to provide accurate, real-time, and context-aware answers about East Central University (ECU).
 
- ECU AI Chatbot \& Web Scraper Project
+The system combines:
 
+Large-scale web scraping
 
+Data analysis & visualization
 
-Welcome to the ECU Chatbot project! This is a fully functional AI chatbot built to help students, faculty, and visitors get accurate, real-time answers about \*\*East Central University (ECU)\*\*. From academic programs and admissions to scholarships, events, housing, and more — this chatbot has you covered.
+NLP-style Q&A generation
 
+Fuzzy matching
 
+LLM fallback (DeepSeek API)
 
----
+This project helps students, faculty, and visitors easily access information about:
+academics, admissions, scholarships, housing, events, student services, and more.
 
+2. Key Features
+Automated Web Scraping
 
+-Scraped 30,000+ ECU webpages
 
-\## What This Project Does
+-Recursive, multi-depth crawling
 
+-Extracts titles, paragraphs, and internal links
 
+3. Intelligent Data Structuring
 
-\- \*\*Scrapes\*\* over 30,000+ ECU web pages using Python and BeautifulSoup
+- Categorizes pages into 20+ university domains
 
-\- \*\*Categorizes\*\* content into structured sections like Academics, Admissions, Scholarships, etc.
+- Cleans noisy web content
 
-\- \*\*Generates NLP-style Q\&A pairs\*\* from raw content using smart templates
+- Removes duplicates and broken links
 
-\- \*\*Runs a chatbot\*\* that:
+4. NLP-Style Q&A Dataset Generation
 
-&nbsp; - Answers questions from a fine-tuned local dataset
+- Converts raw content into question-answer pairs
 
-&nbsp; - Falls back to \*\*DeepSeek API\*\* if no local match is found
+- Supports short, medium, and detailed responses
 
-\- \*\*Visualizes data\*\* with charts showing how information is distributed
+- Optimized for fine-tuning & inference
 
-\- \*\*Automates updates\*\* daily using the `schedule` module
+5. Hybrid Chatbot Architecture
 
+- Local Dataset First (fast + accurate)
 
+- Fuzzy Matching for paraphrased queries
 
----
+- DeepSeek API fallback for unseen questions
 
+6. Data Analysis & Visualization
 
+- Bar charts & pie charts showing content distribution
 
-\## Project Structure
+- CSV export for further analytics
 
+7. Fully Automated Updates
 
+- Scheduled scraping & refinement
 
- Finetuning/
+- Keeps dataset fresh and up-to-date
 
-├── datarefining.py # Scrapes homepage links
+8. Project Architecture
+Fine-Tuning-Project--ECU-Data/
 
-├── mainrefine.py # Recursive scraping from ECU pages
+├── datarefining.py           # Initial homepage scraping
 
-├── structured.py # Categorizes scraped links
+├── mainrefine.py             # Recursive deep scraping
 
-├── analyze.py # Generates bar + pie charts of categories
+├── structured.py             # Category-based organization
 
-├── ecu\_qa\_generator.py # Generates Q\&A pairs from scraped content
+├── analyze.py                # Data analysis & visualization
 
-├── ecu\_qa\_data2.py # Cleans/formats data for fine-tuning
+├── ecu_qa_generator.py       # Q&A dataset generation (NLP format)
 
-├── ecu\_chatbot.py # Main chatbot logic (local + DeepSeek)
+├── ecu_qa_data2.py           # Dataset cleaning & optimization
 
-├── automated\_scraping.py # Runs scraping jobs daily at set times
+├── ecu_chatbot.py            # Chatbot logic (local + DeepSeek)
 
-├── requirements.txt # Python dependencies
+├── automated_scraping.py     # Scheduled automation (daily jobs)
 
-├── README.md # This file
+├── requirements.txt          # Python dependencies
 
-└── .gitignore # Ignore unneeded files
+├── README.md                 # Documentation
 
+└── .gitignore                # Ignored files
 
+10. Tech Stack
 
-yaml
+Programming & Libraries, Python 3.9+, BeautifulSoup, Requests, Pandas, Matplotlib, FuzzyWuzzy, JSON, AI & NLP, DeepSeek R1 (via OpenRouter)
+Prompt-Response Fine-Tuning, Fuzzy Token Matching, Automation, Schedule, Subprocess, Visualization, Bar Charts, Pie Charts, CSV Export
 
-
-
----
-
-
-
-\## 🔧 How to Run It
-
-
-
-\### 1. Clone the Repository
-
-
-
-```bash
-
+*How to Run the Project
+1. Clone the Repository
 git clone https://github.com/nischalchaudhary7/Fine-Tuning-Project--ECU-Data.git
-
 cd Fine-Tuning-Project--ECU-Data
 
-
-
-2\. Install Required Libraries
-
+2. Install Dependencies
 pip install -r requirements.txt
 
-
-
-3\. Run Web Scraping
-
-
-
+3. Run Web Scraping Pipeline
 python datarefining.py
-
 python mainrefine.py
-
 python structured.py
 
+4. Generate NLP Q&A Dataset
+python ecu_qa_generator.py
+python ecu_qa_data2.py
 
+5. Launch the Chatbot
+python ecu_chatbot.py
 
-4\. Generate Q\&A Dataset
-
-
-
-python ecu\_qa\_generator.py
-
-python ecu\_qa\_data2.py
-
-
-
-5\. Launch the Chatbot
-
-
-
-python ecu\_chatbot.py
-
-💬 Sample Chat
-
-plaintext
-
+6. Sample Chat
 You: What scholarships are available for freshmen?
 
-ECU Bot: ✅ Using Local Data: ECU offers a variety of freshman scholarships including academic and needs-based options. You can apply through the ECU scholarships portal.
+ECU Bot: Using Local Data:
+ECU offers a variety of freshman scholarships including academic and need-based awards. Applications are available through the ECU Scholarships Portal.
 
-📈 Visual Output
+7. Data Visualization
 
-Run:
-
-
+Generate analytics:
 
 python analyze.py
 
-Outputs:
 
+Outputs
 
+category_counts.png → Bar & Pie Charts
 
-category\_counts.png: Bar + Pie charts
+category_counts.csv → Raw statistics
 
+* Large Dataset Notice
 
+Due to GitHub’s 100MB file limit, the cleaned fine-tuning dataset is hosted externally.
 
-category\_counts.csv: Raw numbers per category
+Download Dataset (≈360MB):
+Add your Google Drive link here
 
+* API Key Setup (DeepSeek)
 
+Open ecu_chatbot.py
 
-Large Dataset
+Replace:
 
-The cleaned fine-tuning dataset was too large for GitHub’s 100MB limit.
+API_KEY = "your-api-key-here"
 
 
+Get a free API key from:
+https://openrouter.ai
 
- You can download it here:
+* Automated Scraping
 
-Download Cleaned Dataset (360MB)
+Start scheduled updates:
 
+python automated_scraping.py
 
 
-(Replace this with your actual Google Drive link)
+Runs Automatically
 
+datarefining.py → 7:00 AM
 
+mainrefine.py → 8:00 AM
 
-API Key Setup
+Future Enhancements
 
-To use the DeepSeek fallback:
+- Web UI (Flask / React)
 
+- Semantic Search (Embeddings)
 
+- Memory-based Conversations
 
-Open ecu\_chatbot.py
+- Real-time Database Integration
 
-
-
-Replace this line:
-
-
-
-API\_KEY = "your-api-key-here"
-
-Sign up for a free key at openrouter.ai
-
-
-
-Tech Stack
-
-Python
-
-
-
-BeautifulSoup
-
-
-
-Requests
-
-
-
-Pandas
-
-
-
-Matplotlib
-
-
-
-FuzzyWuzzy
-
-
-
-DeepSeek API (via OpenRouter)
-
-
-
-JSON for data storage
-
-
-
-Schedule (for automation)
-
-
-
-Automation Schedule
-
-Set up automated scraping:
-
-
-
-python automated\_scraping.py
-
-Runs datarefining.py daily at 7:00 AM
-
-
-
-Runs mainrefine.py daily at 8:00 AM
-
-
-
-Future Plans
-
-Host chatbot as a web app (Flask or React.js)
-
-
-
-Add a real-time database and search filtering
-
-
-
-Fine-tune with more conversational data
-
-
-
-Integrate LangChain for advanced memory
-
-
+- LangChain / RAG Architecture
 
 License
 
-This project is open source under the MIT License.
+This project is licensed under the MIT License — free to use, modify, and distribute.
 
+*Acknowledgements
 
+East Central University — for publicly available resources
 
-🙌 Acknowledgements
+OpenRouter & DeepSeek — LLM infrastructure
 
-Special thanks to East Central University for providing a rich dataset of public-facing resources.
+Open-source Python community
 
